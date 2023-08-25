@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm run install --verbose
+RUN npm install --verbose
 
 RUN npm run lint --verbose
 
