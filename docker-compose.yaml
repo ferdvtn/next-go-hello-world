@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    platform: linux/amd64
+  web:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    ports:
+      - 3000:3000
+    depends_on:
+      - api
